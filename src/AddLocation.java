@@ -45,7 +45,7 @@ class AddLocation
 			{
 				sock=ServerSock.accept();
 				ObjectOutputStream oos=new ObjectOutputStream(sock.getOutputStream());
-				String query="select * from GlobetrorDB where channel_name='oisChannel' ";
+				String query="select * from GlobetrotDB where channel_name='oisChannel' ";
 				// create the java statement
 				java.sql.Statement st = cn.createStatement();
 				// execute the query, and get a java resultset

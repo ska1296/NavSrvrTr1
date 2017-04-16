@@ -15,7 +15,7 @@ public class Date_a_Base {
 			String url="jdbc:mysql://localhost/mydb?user=root&password=qwerty";
 			Connection cn=DriverManager.getConnection(url); //connection established
 			
-			String query="select * from GlobetrorDB where channel_name='"+channelName+"'";
+			String query="select * from GlobetrotDB where channel_name='"+channelName+"'";
 			java.sql.Statement st = cn.createStatement();
 			ResultSet rs = st.executeQuery(query);
 			
