@@ -1,4 +1,4 @@
-package Test1;
+package test2;
 
 import java.io.*;
 
@@ -8,13 +8,12 @@ public class tr1 {
 	static int flag1;
 	
 	public static void main(String[] args)throws IOException {
-		// TODO Auto-generated method stub
-		RecClient bl=new RecClient();
-		bl.stuff();
-		flag1=bl.getflag();
+		RecieveClient bl=new RecieveClient();
+		//bl.stuff();
+		/*flag1=bl.getflag();
 		lat1=bl.getlat();
 		lon1=bl.getlongi();
-		channelname1=bl.getchnm();
+		channelname1=bl.getchnm();*/
 		
 		System.out.println(channelname1);
 		System.out.println(flag1);
