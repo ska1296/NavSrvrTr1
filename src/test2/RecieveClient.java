@@ -28,16 +28,16 @@ public class RecieveClient {
 				ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
 				oos.writeObject(channelName);
 
-				System.out.println("HELLO "+channelName+" wuddup");
+				//System.out.println("HELLO "+channelName+" wuddup");
 				ObjectInputStream fl=new ObjectInputStream(s.getInputStream());
-				System.out.println("100");
+				//System.out.println("100");
 				int flag=Integer.parseInt(fl.readObject().toString());
-				System.out.println("101");
-				System.out.println(flag);
-				System.out.println("102");
+				//System.out.println("101");
+				//System.out.println(flag);
+				//System.out.println("102");
 				if(flag==1){
-					System.out.println("103");
-					System.out.println(flag+" flag1");
+					//System.out.println("103");
+					//System.out.println(flag+" flag1");
 					System.out.println(channelName);
 					
 					ObjectInputStream oisLat=new ObjectInputStream(s.getInputStream());
