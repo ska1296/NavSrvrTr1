@@ -72,8 +72,8 @@ class Server implements ActionListener
 						ObjectOutputStream oosLon=new ObjectOutputStream(sock.getOutputStream());
 						oosLon.writeObject(strLon);
 						//System.out.println(ChannelName+" "+strChannel);
-						//System.out.println(strLon);
-						//System.out.println(strLat);
+						System.out.println(strLon);
+						System.out.println(strLat);
 					}
 					else
 					{
