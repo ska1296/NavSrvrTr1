@@ -87,8 +87,8 @@ class RecieveServer implements ActionListener
 						tep=preparedst.executeUpdate();
 					}
 					//System.out.println("data inserted");
-					System.out.println(strLon);
-					System.out.println(strLat);
+					//System.out.println(strLon);
+					//System.out.println(strLat);
 					//System.out.println(strChannel);
 
 					//System.out.println("LOL");

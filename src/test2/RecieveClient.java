@@ -22,7 +22,7 @@ public class RecieveClient {
 		channelName=in.readLine();
 		try {
 			if (s == null) {
-				s = new Socket("192.168.137.1", 3072);
+				s = new Socket("localhost", 3072);
 			}
 			while(true) {
 				ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
