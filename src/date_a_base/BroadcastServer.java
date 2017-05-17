@@ -4,6 +4,7 @@ import java.io.*;
 import java.net.*;
 import java.sql.*;
 
+//a multithreading server to handle multiple clients.
 
 public class BroadcastServer {
 	public static void main(String args[]){
@@ -45,13 +46,13 @@ class BroadcastServerThread extends Thread {
 
 	public void run() {
 		try{
-			ObjectInputStream oisLon=new ObjectInputStream(sock.getInputStream());
+			ObjectInputStream oisLon=new ObjectInputStream(sock.getInputStream());//read's client's message on that socket
 			ObjectInputStream oisLat=new ObjectInputStream(sock.getInputStream()); //read's client's message on that socket
-			ObjectInputStream oisChannel=new ObjectInputStream(sock.getInputStream());
+			ObjectInputStream oisChannel=new ObjectInputStream(sock.getInputStream()); //read's client's message on that socket
 
 			strLon=oisLon.readObject().toString(); //converts to string
-			strLat=oisLat.readObject().toString();
-			strChannel=oisChannel.readObject().toString();
+			strLat=oisLat.readObject().toString(); //converts to string
+			strChannel=oisChannel.readObject().toString(); //converts to string
 		}catch(Exception e){
 			System.out.println("IO error in server thread");
 		}
@@ -65,15 +66,15 @@ class BroadcastServerThread extends Thread {
 				String url="jdbc:mysql://localhost/mydb?user=root&password=qwerty";
 				Connection cn=DriverManager.getConnection(url); //connection established
 
-				String query="select * from GlobetrotDB where channel_name='"+strChannel+"'";
+				String query="select * from GlobetrotDB where channel_name='"+strChannel+"'"; //query pass to table
 				java.sql.Statement st = cn.createStatement();
 				ResultSet rs = st.executeQuery(query);
 				String ChannelName;
 				int flag=0;
-				while (rs.next())
+				while (rs.next()) //to traverese to the end of the table
 				{
-					ChannelName = rs.getString("channel_name");
-					if (strChannel.equals(ChannelName))
+					ChannelName = rs.getString("channel_name"); //read from column and put into a variable
+					if (strChannel.equals(ChannelName)) //logical stuff for my code.
 					{
 						flag=1;
 						break;
